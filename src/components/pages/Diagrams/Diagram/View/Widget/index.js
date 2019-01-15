@@ -117,7 +117,7 @@ export class AdvancedLinkSegment extends React.Component {
 
   render() {
     return (
-      <>
+      <Fragment>
         <path
           ref={ref => {
             this.path = ref;
@@ -133,7 +133,7 @@ export class AdvancedLinkSegment extends React.Component {
           r={5}
           fill="orange"
         />
-      </>
+      </Fragment>
     );
   }
 }

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 import EditableView from 'apollo-cms/lib/DataView/Object/Editable';
@@ -77,7 +77,7 @@ export class AdvancedLinkSegment extends React.Component {
 
   render() {
     return (
-      <>
+      <Fragment>
         <path
           ref={ref => {
             this.path = ref;
@@ -93,7 +93,7 @@ export class AdvancedLinkSegment extends React.Component {
           r={10}
           fill="orange"
         />
-      </>
+      </Fragment>
     );
   }
 }

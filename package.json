@@ -1,6 +1,6 @@
 {
-  "name": "@prisma-cms/component-boilerplate",
-  "version": "1.3.5",
+  "name": "@prisma-cms/diagram",
+  "version": "1.4.0",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
@@ -38,13 +38,9 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "description": "Tests module for @prisma-cms",
+  "description": "Diagram component for @prisma-cms",
   "directories": {
     "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prisma-cms/component-boilerplate.git"
   },
   "keywords": [
     "prisma-cms",
@@ -52,9 +48,13 @@
     "components"
   ],
   "author": "Fi1osof",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prisma-cms/diagram.git"
+  },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/prisma-cms/component-boilerplate/issues"
+    "url": "https://github.com/prisma-cms/diagram/issues"
   },
-  "homepage": "https://github.com/prisma-cms/component-boilerplate#readme"
+  "homepage": "https://github.com/prisma-cms/diagram#readme"
 }
