@@ -50,9 +50,9 @@ export default class SubscriptionProvider extends Component {
     } = this.state;
 
 
-    const subscribeUser = gql`
-      subscription user{
-        user{
+    const subscribeDiagram = gql`
+      subscription diagram{
+        diagram{
           mutation
           node{
             id
@@ -61,9 +61,9 @@ export default class SubscriptionProvider extends Component {
       }
     `;
 
-    const userSub = await client
+    const diagramSub = await client
       .subscribe({
-        query: subscribeUser,
+        query: subscribeDiagram,
         variables: {
         },
       })
@@ -78,8 +78,72 @@ export default class SubscriptionProvider extends Component {
         },
       });
 
+      subscriptions.push(diagramSub);
 
-    subscriptions.push(userSub);
+
+
+    const subscribeDiagramNode = gql`
+      subscription diagramNode{
+        diagramNode{
+          mutation
+          node{
+            id
+          }
+        }
+      }
+    `;
+
+    const diagramNodeSub = await client
+      .subscribe({
+        query: subscribeDiagramNode,
+        variables: {
+        },
+      })
+      .subscribe({
+        next: async (data) => {
+
+          await this.reloadData();
+
+        },
+        error(error) {
+          console.error('subscribeCalls callback with error: ', error)
+        },
+      });
+
+      subscriptions.push(diagramNodeSub);
+
+
+    const subscribeDiagramLink = gql`
+      subscription diagramLink{
+        diagramLink{
+          mutation
+          node{
+            id
+          }
+        }
+      }
+    `;
+
+    const diagramLinkSub = await client
+      .subscribe({
+        query: subscribeDiagramLink,
+        variables: {
+        },
+      })
+      .subscribe({
+        next: async (data) => {
+
+          await this.reloadData();
+
+        },
+        error(error) {
+          console.error('subscribeCalls callback with error: ', error)
+        },
+      });
+
+      subscriptions.push(diagramLinkSub);
+
+
 
     this.setState({
       subscriptions,
@@ -135,7 +199,7 @@ export default class SubscriptionProvider extends Component {
 
     const {
       children,
-      user,
+      diagram,
       client,
       loadApiData,
       ...other

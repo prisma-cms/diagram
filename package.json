@@ -15,13 +15,14 @@
   },
   "dependencies": {
     "@prisma-cms/context": "latest",
-    "graphql": "14.0.2"
+    "graphql": "14.0.2",
+    "storm-react-diagrams": "^5.2.1"
   },
   "devDependencies": {
     "@prisma-cms/front": "latest",
     "@prisma-cms/server": "latest",
     "graphql-cli": "2.17.0",
-    "node-less-chokidar": "latest",
+    "node-less-chokidar": "^0.3.1",
     "nwb": "^0.23.0",
     "react-scripts": "2.1.2"
   },
